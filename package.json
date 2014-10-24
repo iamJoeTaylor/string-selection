@@ -1,0 +1,34 @@
+{
+  "name": "string-selection",
+  "version": "1.0.0",
+  "description": "Describe selections with a string.",
+  "main": "dist/string-selection.js",
+  "scripts": {
+    "build": "make",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamJoeTaylor/string-selection.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "selection",
+    "string",
+    "testing",
+    "unit",
+    "test"
+  ],
+  "author": "Brian Donovan <donovan@squareup.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamJoeTaylor/string-selection/issues"
+  },
+  "homepage": "https://github.com/iamJoeTaylor/string-selection",
+  "devDependencies": {
+    "esnext": "^0.11.1",
+    "jshint": "^2.5.6"
+  }
+}
