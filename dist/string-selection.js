@@ -9,27 +9,6 @@ var Selection = function() {
     this.input = input;
   }
 
-  $__Object$defineProperties(Selection.prototype, {
-    text: {
-      get: function() {
-        return this.input.value.substring(this.start, this.end);
-      },
-
-      enumerable: true,
-      configurable: true
-    },
-
-    replace: {
-      value: function(string) {
-        var originalValue = this.input.value;
-        return originalValue.substring(0, this.start) + string + originalValue.substring(this.end);
-      },
-
-      enumerable: false,
-      writable: true
-    }
-  });
-
   $__Object$defineProperties(Selection, {
     parseDescription: {
       value: function(description) {
@@ -95,6 +74,8 @@ var Selection = function() {
           caret.end = caret.start;
         }
 
+        caret.input = value;
+
         return { caret: caret, affinity: affinity, value: value };
       },
 
@@ -106,7 +87,7 @@ var Selection = function() {
       value: function(data) {
         var caret = data.caret;
         var affinity = data.affinity;
-        var value = data.value;
+        var value = data.value || caret.input;
 
         if (caret.start === caret.end) {
           if (affinity !== undefined && affinity !== null) {

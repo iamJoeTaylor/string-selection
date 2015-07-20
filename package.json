@@ -5,7 +5,7 @@
   "main": "dist/string-selection.js",
   "scripts": {
     "build": "make",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/iamJoeTaylor/string-selection",
   "devDependencies": {
+    "chai": "^3.2.0",
     "esnext": "^0.11.1",
-    "jshint": "^2.5.6"
+    "jshint": "^2.5.6",
+    "mocha": "^2.2.5"
   }
 }
