@@ -1,6 +1,6 @@
 {
   "name": "string-selection",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Describe selections with a string.",
   "main": "dist/string-selection.js",
   "scripts": {
