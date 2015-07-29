@@ -1,24 +1,18 @@
 NPMBIN = $(shell npm bin)
+DIST = dist/string-selection.js
 
 all: clean dist
 
-ESNEXT = find . -name '*.js' && $(NPMBIN)/esnext -o ../tmp $$(find . -name '*.js')
+dist: $(DIST)
 
-lib:
-	cd lib && $(ESNEXT)
-
-dist: lib
-	mv tmp/string-selection.js dist/string-selection.js
+$(DIST): lib/string-selection.js
+	@mkdir -p $(shell dirname $(DIST))
+	$(NPMBIN)/babel -o dist/string-selection.js -m umd --module-id Selection lib/string-selection.js
 
 test: clean dist
 	mocha
 
-clean_lib:
-	cd tmp && find . -name '*.js' | xargs rm || true
+clean:
+	rm -f $(DIST)
 
-clean_dist:
-	cd dist && find . -name '*.js*' | xargs rm || true
-
-clean: clean_dist clean_lib
-
-.PHONY: clean_lib clean_test clean lib test
+.PHONY: clean test
