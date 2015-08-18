@@ -1,6 +1,6 @@
 {
   "name": "string-selection",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Describe selections with a string.",
   "main": "dist/string-selection.js",
   "jsnext:main": "lib/string-selection.js",
